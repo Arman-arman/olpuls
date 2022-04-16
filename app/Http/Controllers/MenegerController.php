@@ -24,7 +24,7 @@ class MenegerController extends Controller
             $search =  Meneger::orderBy("updated_at", "DESC")->get();
             return view('menegers.index',compact('search'))->with('i');
         } else if (request()->input('refresh') != null) {
-            return redirect()->route('members.index');
+            return redirect()->route('menegers.index');
         } else {
             $search = []; 
             $menegers = Meneger::paginate(10);
